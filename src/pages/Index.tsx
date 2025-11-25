@@ -8,7 +8,8 @@ const slides = [
     section: 'intro',
     title: 'Айседора Дункан',
     subtitle: 'Революция в танце и жизнь, ставшая легендой',
-    content: '1877 - 1927'
+    content: '1877 - 1927',
+    image: 'https://cdn.poehali.dev/projects/e1e30940-47f8-48bf-9a45-4dea8503559a/files/4ba7c907-8a0d-4301-b1cc-1c18ee7eda6d.jpg'
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ const slides = [
     section: 'biography',
     title: 'Роман с Есениным',
     subtitle: 'Встреча двух гениев',
-    content: 'В 1921 году в Москве встретила поэта Сергея Есенина. Ей было 43, ему — 26. Брак продлился всего два года, но оставил яркий след в истории.'
+    content: 'В 1921 году в Москве встретила поэта Сергея Есенина. Ей было 43, ему — 26. Брак продлился всего два года, но оставил яркий след в истории.',
+    image: 'https://cdn.poehali.dev/projects/e1e30940-47f8-48bf-9a45-4dea8503559a/files/7433974f-44be-4344-9ce9-4d7825e8a275.jpg'
   },
   {
     id: 5,
@@ -78,7 +80,8 @@ const slides = [
     section: 'style',
     title: 'Философия движения',
     subtitle: 'Свобода тела и духа',
-    content: 'Отказалась от корсетов, пуантов и жёстких правил балета. Танцевала босиком, в свободных туниках, черпая вдохновение в античности.'
+    content: 'Отказалась от корсетов, пуантов и жёстких правил балета. Танцевала босиком, в свободных туниках, черпая вдохновение в античности.',
+    image: 'https://cdn.poehali.dev/projects/e1e30940-47f8-48bf-9a45-4dea8503559a/files/a7306df6-db48-49f7-9885-f8e0d26ace11.jpg'
   },
   {
     id: 12,
@@ -253,6 +256,15 @@ export default function Index() {
           </div>
 
           <div className="space-y-6">
+            {slides[currentSlide].image && (
+              <div className="mb-8 flex justify-center">
+                <img 
+                  src={slides[currentSlide].image} 
+                  alt={slides[currentSlide].title}
+                  className="rounded-2xl shadow-2xl max-h-80 object-cover border-4 border-white/20 animate-scale-in"
+                />
+              </div>
+            )}
             <h2 className="text-6xl md:text-7xl font-serif font-bold leading-tight animate-fade-in">
               {slides[currentSlide].title}
             </h2>
